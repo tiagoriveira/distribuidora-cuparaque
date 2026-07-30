@@ -78,6 +78,26 @@ Decisão       : BLOQUEADA por R2 (não decidir investimento antes das 4 cotaç�
 
 ---
 
+### Página web no Lovable — pedida, não executada
+
+- [ ] **Criar a página web no Lovable.** Pedida pelo founder em 30/07/2026 (duas vezes). **Não foi
+      criada:** o conector MCP do Lovable caiu no meio da sessão. Ele estava ativo e funcional —
+      os workspaces chegaram a ser listados com sucesso antes da queda.
+      - **Workspace definido:** `yWut1L8QhIAJ9fMG61Ae` — "Tiago's Lovable", onde o founder é
+        **proprietário** (72 projetos, plano free). O outro (`paKQonUK9nol9R7XnpVO`, 13 projetos)
+        é onde ele entra como colaborador.
+      - **Escopo escolhido provisoriamente:** painel de leitura do estudo de viabilidade (números
+        atuais, os três achados, o que falta cotar). ⚠️ **O founder não confirmou o escopo** —
+        ver `docs/em-aberto.md`, entrada de 30/07 sobre a página web. **Confirmar antes de criar.**
+      - ⚠️ **Requisito não-negociável da página:** os números exibidos são `INVENTADO` (R1). O
+        aviso precisa estar **em destaque, não em rodapé**. Uma página bonita com "R$ 74.058/mês"
+        no topo é exatamente o mecanismo que transforma ficção em decisão — e os outros dois
+        sócios não acompanharam de onde esse número saiu.
+      - **Alternativas se o conector não voltar:** (a) escrever o prompt completo para o founder
+        colar no Lovable; (b) entregar a mesma página como HTML publicado.
+
+---
+
 ## 🔒 Bloqueado — aguardando algo externo
 
 - [ ] **Qualquer decisão de investir ou não** — travado por **R2**: as 4 cotações de campo não

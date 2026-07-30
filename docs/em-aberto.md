@@ -11,6 +11,36 @@
 
 ---
 
+## [30/07/2026] — Página web no Lovable: página de quê?
+
+**Pergunta/tensão em aberto:** o founder pediu **duas vezes** "criar uma página web no Lovable",
+sem especificar o conteúdo, e não respondeu quando as opções foram apresentadas. A ambiguidade é
+real porque **minutos antes ele havia decidido "só Excel, sem página web"** para o modelo
+financeiro — então a página provavelmente é outra coisa, mas não se sabe qual.
+
+**O que já se sabe:**
+- Workspace definido: `yWut1L8QhIAJ9fMG61Ae` (onde ele é proprietário).
+- O conector do Lovable caiu antes de qualquer coisa ser criada. **Nada foi feito lá.**
+
+**Opções na mesa:**
+- **Vitrine / cardápio da conveniência** — produtos, combos, horário, área de entrega, botão que
+  abre o WhatsApp com o pedido. Prós: **é a única das quatro que gera receita**, e não depende de
+  nenhuma cotação para começar a valer. Contras: é ferramenta de venda de um negócio que ainda não
+  existe.
+- **Painel de leitura do estudo** *(escolha provisória)* — números, os três achados, o que falta
+  cotar. Prós: serve para alinhar os outros dois sócios; sem risco de divergir do Excel. Contras:
+  não produz nada além de comunicação.
+- **Dashboard editável do modelo financeiro** — prós: o modelo fica acessível no celular.
+  Contras: **contraria a decisão de 30/07** ("planilha fica no Excel") e cria segunda fonte que
+  pode divergir — exatamente o que R7 existe para evitar.
+- **Painel operacional** (pedidos, estoque, ruptura) — já está no `ROADMAP.md`, esperando a loja
+  existir.
+
+**Status:** em aberto — **perguntar antes de criar.** A escolha provisória foi o painel de leitura,
+mas ela não foi confirmada pelo founder.
+
+---
+
 ## [30/07/2026] — Isto é um emprego ou um investimento?
 
 **Pergunta/tensão em aberto:** o modelo, como está desenhado, aloca **todo** o resultado como

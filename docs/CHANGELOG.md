@@ -70,6 +70,23 @@ da DRE por pedido fecha em R$ 10,096, idêntica ao R$ 10,09 do modelo original.
 ⚠️ **Nenhuma pesquisa externa foi feita, em nenhum momento deste projeto.** Nenhuma cotação real
 existe. Ver `CLAUDE.md` §5.
 
+**Ficou pendente ao encerrar a sessão:**
+
+- **Página web no Lovable** — pedida pelo founder, **não criada**. O conector MCP do Lovable
+  esteve ativo (os workspaces chegaram a ser listados) e caiu antes de qualquer criação. O escopo
+  da página **não foi confirmado** pelo founder. Detalhes operacionais em `docs/BACKLOG.md`; a
+  decisão em aberto em `docs/em-aberto.md`.
+- **As 6 abas novas da planilha** (FluxoCaixa, DRE, Valuation, Precificacao, Estoque,
+  Concorrencia) foram planejadas e aprovadas em escopo, mas **não implementadas** — a sessão
+  encerrou antes. Enquanto elas não existirem, as análises de 30/07 vivem só como texto no Notion
+  e **não recalculam** (viola R7 na prática). É o maior débito técnico aberto.
+- **`openpyxl` não foi instalado** — necessário para editar o .xlsx. Requer autorização explícita
+  do founder (regra 9 do padrão global).
+
+**Para quem pegar a próxima sessão:** leia `CLAUDE.md`, depois `docs/index.md`, e vá para
+`docs/BACKLOG.md`. O gargalo real do projeto **não é código nem planilha** — são as 7 cotações de
+campo que só o founder pode levantar. Sem elas, todo refinamento do modelo é refinar ficção (R2).
+
 ---
 
 ## [29/07/2026] — Origem: modelo financeiro por precificação reversa (Claude, sessão anterior)
