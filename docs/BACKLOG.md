@@ -72,29 +72,32 @@ Decisão       : BLOQUEADA por R2 (não decidir investimento antes das 4 cotaç�
       torna o VPL negativo por construção. Sem essa linha, o projeto é compra de emprego, não
       investimento. ⚠️ Adicioná-la **aumenta** o faturamento necessário, que já está na borda do
       que a cidade comporta — é provável que o modelo não feche. Descobrir isso é o ponto.
-- [ ] **Tornar a participação de mercado um parâmetro da aba `Demanda`** (R4).
+- [ ] **Tornar a participação de mercado um parâmetro da aba `Demanda`** (R4). ℹ️ Já está feito no
+      dashboard do Lovable (slider, padrão 100%, com alerta). **Na planilha continua implícito em
+      100%** — as duas divergem nesse ponto até a planilha alcançar.
 - [ ] **Alocar entrega e perdas por categoria**, para que a curva ABC por margem use margem de
       contribuição em vez de margem bruta. Hoje o gelo aparece melhor do que provavelmente é.
 
 ---
 
-### Página web no Lovable — pedida, não executada
+### Dashboard no Lovable — criado, com 2 ajustes travados por crédito
 
-- [ ] **Criar a página web no Lovable.** Pedida pelo founder em 30/07/2026 (duas vezes). **Não foi
-      criada:** o conector MCP do Lovable caiu no meio da sessão. Ele estava ativo e funcional —
-      os workspaces chegaram a ser listados com sucesso antes da queda.
-      - **Workspace definido:** `yWut1L8QhIAJ9fMG61Ae` — "Tiago's Lovable", onde o founder é
-        **proprietário** (72 projetos, plano free). O outro (`paKQonUK9nol9R7XnpVO`, 13 projetos)
-        é onde ele entra como colaborador.
-      - **Escopo escolhido provisoriamente:** painel de leitura do estudo de viabilidade (números
-        atuais, os três achados, o que falta cotar). ⚠️ **O founder não confirmou o escopo** —
-        ver `docs/em-aberto.md`, entrada de 30/07 sobre a página web. **Confirmar antes de criar.**
-      - ⚠️ **Requisito não-negociável da página:** os números exibidos são `INVENTADO` (R1). O
-        aviso precisa estar **em destaque, não em rodapé**. Uma página bonita com "R$ 74.058/mês"
-        no topo é exatamente o mecanismo que transforma ficção em decisão — e os outros dois
-        sócios não acompanharam de onde esse número saiu.
-      - **Alternativas se o conector não voltar:** (a) escrever o prompt completo para o founder
-        colar no Lovable; (b) entregar a mesma página como HTML publicado.
+> **Criado em 30/07/2026.** Projeto **"Cuparaque Conecta"**
+> (`3e66cd92-bafc-489e-b9b4-d8a193d56977`), workspace `yWut1L8QhIAJ9fMG61Ae`. Privado, não
+> publicado. Escopo confirmado pelo founder: **dashboard editável do modelo**. Histórico completo
+> no `docs/CHANGELOG.md`.
+
+- [ ] **Corrigir bug de ponto flutuante nos campos percentuais.** O campo "Taxa de cartão/Pix"
+      exibe `1.799999999 %` em vez de `1,8 %` — a fração armazenada (0.018) é multiplicada por 100
+      sem arredondar. Conferir também participação e CMV na aba Mix, que usam o mesmo padrão.
+- [ ] **Adicionar card "o que este modelo ainda não responde" na aba DRE:** ausência da linha de
+      lucro-alvo sobre o capital, ST não implementada, curva de rampagem sem benchmark.
+- ⚠️ **Ambos travados:** o workspace do Lovable **ficou sem créditos** após o build inicial.
+      Destrava com créditos em https://lovable.dev/settings/billing.
+- [ ] **Manter dashboard e planilha sincronizados.** São duas fontes do mesmo modelo — o risco que
+      a decisão de 30/07 ("só Excel") existia para evitar. Hoje a mitigação é que **nada é
+      chumbado** no dashboard: ele recalcula tudo a partir dos inputs. **Se uma premissa mudar na
+      planilha, os padrões do dashboard precisam mudar junto**, senão as duas divergem na entrada.
 
 ---
 
@@ -112,6 +115,15 @@ Decisão       : BLOQUEADA por R2 (não decidir investimento antes das 4 cotaç�
 
 - **Divergência de arredondamento:** a planilha traz R$ 71,54 de gasto/domicílio; o recálculo de
   30/07 dá ~R$ 72,50. Origem provável: número de domicílios. Não afeta conclusão.
+- ⚠️ **Capital da rampagem: R$ 32.500 ou R$ 44.850?** Reproduzindo a curva **exatamente como
+  `docs/modelo/premissas.md` §7 a descreve** (40% no mês 1 → 100% no mês 11, linear = +6 pontos/mês)
+  com retirada integral, o pior saldo acumulado dá **−R$ 44.850**. O `CLAUDE.md` §6 e o CHANGELOG
+  registram **~R$ 32.500**. **Não sei qual está certo** — a curva original provavelmente tinha outro
+  formato, que não ficou documentado. **Resolve-se documentando os 12 percentuais mês a mês**, em
+  vez de descrever a curva em prosa. Impacto: é o número que diz quanto dinheiro precisa existir
+  antes de abrir — a diferença é de R$ 12 mil.
+- **Ponto de equilíbrio: ~306, não ~302 pedidos/mês.** `3.091 ÷ 10,0936 = 306,2`. O `CLAUDE.md` §6
+  e o CHANGELOG de 29/07 dizem ~302. Diferença pequena, sem efeito em conclusão nenhuma.
 - **Conflito populacional não resolvido:** o founder citou "~8 mil habitantes" antes de enviar os
   dados de Cuparaque (3.958). O modelo usa 3.958. Ver `docs/em-aberto.md`.
 - **`openpyxl` não instalado** no ambiente — necessário para editar o .xlsx programaticamente.

@@ -138,8 +138,8 @@ O detalhamento item a item está em **`docs/modelo/premissas.md`**.
 | Margem de contribuição | R$ 10,09/pedido (18,4%) | Margem baixa — restringe desconto e posicionamento por preço |
 | Pedidos necessários | 1.347/mês (~45/dia) | |
 | Faturamento necessário | R$ 74.058/mês | |
-| Ponto de equilíbrio | ~302 pedidos/mês (~10/dia) | Folga de segurança grande |
-| **Capital da rampagem** | **~R$ 32.500** | Não aparecia em lugar nenhum do modelo original |
+| Ponto de equilíbrio | ~302 pedidos/mês (~10/dia) | ⚠️ Recálculo de 30/07 dá **~306** — ver `docs/BACKLOG.md`. Folga de segurança grande de qualquer forma |
+| **Capital da rampagem** | **~R$ 32.500** | ⚠️ **Divergência aberta:** a curva como documentada em `premissas.md` §7 dá **R$ 44.850**. Ver `docs/BACKLOG.md` |
 | **Resultado em DRE** | **−R$ 659/mês** | Prejuízo, pela depreciação não coberta |
 
 ⚠️ **Três achados de 30/07/2026 que o modelo original não mostrava** — detalhe em
@@ -158,6 +158,7 @@ O detalhamento item a item está em **`docs/modelo/premissas.md`**.
 | Artefato | Onde | Papel |
 |---|---|---|
 | **Planilha do modelo** | `modelo/plano_conveniencia_cuparaque.xlsx` | **Fonte executável.** 7 abas, 159 fórmulas encadeadas a partir de `Premissas` |
+| **Dashboard editável** | Lovable, projeto `3e66cd92-bafc-489e-b9b4-d8a193d56977` ("Cuparaque Conecta") | Espelho **interativo** do modelo — 7 abas, nada chumbado, recalcula tudo dos inputs. **Não é fonte de verdade:** se divergir da planilha, a planilha manda |
 | **7 cursos de gestão financeira** | [Notion](https://app.notion.com/p/3aca16ed6e5f815e9c87fa7ae4592859) | Material didático: margem, fluxo de caixa, valuation, precificação, estoque, concorrência, DRE |
 | **Briefing de handoff** | Processado para `docs/CHANGELOG.md` e `docs/em-aberto.md` | Origem do projeto (29/07/2026) |
 

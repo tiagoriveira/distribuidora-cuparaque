@@ -15,6 +15,63 @@
 
 ---
 
+## [30/07/2026] — Dashboard editável criado no Lovable + duas divergências aritméticas encontradas (Claude)
+
+**Contexto:** sessão seguinte à da criação do repositório. O founder pediu, de novo, a página web no
+Lovable. O escopo estava registrado como **não confirmado** em `docs/em-aberto.md`, então foi
+perguntado antes de qualquer criação — como o próprio founder havia instruído.
+
+**Decisão do founder:** entre as quatro opções em aberto, escolheu o **dashboard editável do modelo
+financeiro**.
+
+⚠️ **Essa escolha contraria a decisão de 30/07 registrada na entrada abaixo** ("planilha fica em
+Excel, sem página web espelho"). A decisão nova é do founder e prevalece — mas o risco que a decisão
+antiga evitava continua real: **agora existem duas fontes do mesmo modelo.** A mitigação adotada é a
+única que funciona: **a página não tem nenhum resultado chumbado.** Todo número exibido é calculado
+em tempo real a partir dos inputs, com as mesmas fórmulas de `docs/modelo/formulas.md`. Divergir só
+é possível se as **premissas** divergirem — não os resultados.
+
+**O que foi criado:** projeto Lovable **"Cuparaque Conecta"**
+(`3e66cd92-bafc-489e-b9b4-d8a193d56977`), no workspace `yWut1L8QhIAJ9fMG61Ae`. Sete abas:
+Premissas · Mix · Cascata · Demanda · DRE · Fluxo de caixa · Precificação. Motor de cálculo isolado
+em `src/lib/viabilidade/model.ts`. Sem backend; estado em localStorage. Privado, não publicado.
+
+**Conformidade com as restrições:**
+- **R1** — banner fixo no topo, sem botão de fechar, declarando que nenhum número foi cotado. Todo
+  valor exibido carrega selo (`INVENTADO` / `INFORMADO` / `DERIVADO` / `A CONFERIR`).
+- **R7** — nenhum resultado chumbado; a cascata inteira recalcula ao mexer em qualquer input.
+- **R4** — **participação de mercado virou input explícito** (slider, padrão 100%), com alerta
+  quando está em 100%: *"isso não é um cenário, é um monopólio"*. Na planilha isso ainda está
+  implícito em 100% — o dashboard corrigiu antes da planilha.
+- **R3** — a comparação com PIB per capita só aparece acompanhada do aviso de que 40,7% do PIB local
+  é administração pública.
+
+**Duas divergências aritméticas encontradas ao reconferir a cascata** (achado desta sessão, não
+resolvido — ver `docs/BACKLOG.md`):
+
+1. **Capital da rampagem: R$ 44.850, não R$ 32.500.** Reproduzindo a curva exatamente como
+   `docs/modelo/premissas.md` §7 a descreve (40% no mês 1 → 100% no mês 11, linear = +6 pontos/mês)
+   com retirada integral desde o mês 1, o pior saldo acumulado dá **−R$ 44.850**. A entrada abaixo
+   registra ~R$ 32.500. **Não sei qual está certo** — provavelmente a curva original tinha outro
+   formato, que não ficou documentado. Não foi "corrigido" em lugar nenhum: os 12 meses da curva são
+   editáveis no dashboard, então o número passa a sair de um input visível em vez de uma premissa
+   implícita.
+2. **Ponto de equilíbrio: ~306 pedidos/mês, não ~302.** `3.091 ÷ 10,0936 = 306,2`. Diferença
+   pequena, sem efeito em nenhuma conclusão, mas o `CLAUDE.md` §6 e a entrada de 29/07 dizem ~302.
+
+**Validação:** a cascata foi refeita à mão antes de escrever o prompt e confere no ponto que
+importa — **a margem de contribuição total do mês maduro (R$ 13.591) bate exatamente com custo fixo
++ retirada (3.091 + 10.500)**, que é o fechamento que o planejamento reverso exige. Alíquota efetiva
+recalculada pela tabela do Anexo I a partir do RBT12: 8,1344%. MC R$ 10,0936/pedido · 1.346,5
+pedidos · R$ 74.058/mês · EBIT −R$ 666,67. O motor do dashboard foi lido linha a linha e reproduz
+essas fórmulas.
+
+**Ficou pendente:** o workspace do Lovable **ficou sem créditos** logo após o build inicial. Dois
+ajustes não entraram: (a) bug de ponto flutuante exibindo `1.799999999 %` no campo de taxa de
+cartão; (b) card "o que este modelo ainda não responde" na aba DRE. Estão no `docs/BACKLOG.md`.
+
+---
+
 ## [30/07/2026] — Repositório criado + 6 cursos novos + 3 achados que mudam o modelo (Claude)
 
 **Contexto:** o projeto vinha de uma sessão anterior que produziu a planilha e um curso de gestão
