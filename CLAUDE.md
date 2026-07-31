@@ -164,7 +164,7 @@ O detalhamento item a item está em **`docs/modelo/premissas.md`**.
 |---|---|---|
 | **Planilha do modelo** | `modelo/plano_conveniencia_cuparaque.xlsx` | **Fonte executável.** 7 abas, 159 fórmulas encadeadas a partir de `Premissas` |
 | **Dashboard editável** | Lovable, projeto `3e66cd92-bafc-489e-b9b4-d8a193d56977` ("Cuparaque Conecta") | Espelho **interativo** do modelo — 7 abas, nada chumbado, recalcula tudo dos inputs. **Não é fonte de verdade:** se divergir da planilha, a planilha manda |
-| **7 cursos de gestão financeira** | [Notion](https://app.notion.com/p/3aca16ed6e5f815e9c87fa7ae4592859) | Material didático: margem, fluxo de caixa, valuation, precificação, estoque, concorrência, DRE. ⚠️ Único conteúdo que ainda vive fora do vault — migrar é item do `docs/BACKLOG.md` |
+| **7 cursos de gestão financeira** | [Notion](https://app.notion.com/p/3aca16ed6e5f815e9c87fa7ae4592859) | Material didático: margem, fluxo de caixa, valuation, precificação, estoque, concorrência, DRE. **Ficam no Notion por decisão do founder (31/07/2026)** — é a única exceção ao vault, e é deliberada. ⚠️ Consequência: **nenhuma sessão os lê automaticamente.** Quem precisar de um conceito de lá tem que abrir o Notion de propósito |
 | **Briefing de handoff** | Processado para `docs/CHANGELOG.md` e `docs/em-aberto.md` | Origem do projeto (29/07/2026) |
 
 **Segundo cérebro = este repositório, aberto como vault do Obsidian.** Decisão do founder,

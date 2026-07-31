@@ -61,9 +61,11 @@ ganhava.
   O que sobrou em aberto é só a **segunda planilha** (gestão mensal do realizado), que a decisão do
   Obsidian **não** resolve — `docs/operacao/` é markdown, registra mas não calcula. Marcada como
   não urgente: não há mês para fechar sem operação.
-- **`docs/BACKLOG.md`** — dois itens novos: migrar os 7 cursos (único conteúdo ainda fora do repo) e
-  decidir o destino da página vazia do Notion, que enquanto existir é candidata a virar segunda
-  fonte por acidente. **Não apagar nada por conta própria.**
+**Decidido na sequência, ainda em 31/07: os 7 cursos e a página de gestão ficam no Notion.** Não há
+migração pendente — a exceção ao vault é deliberada, não um débito. ⚠️ **A consequência assumida:**
+nenhuma sessão lê os cursos automaticamente; quem precisar de um conceito de lá abre o Notion de
+propósito. Registrado no `CLAUDE.md` §7, e os dois itens que eu havia aberto no `BACKLOG.md` foram
+retirados de lá — pendência decidida sai do backlog.
 
 **Estado da pasta de operação:** quase vazia, e **isso está certo** — o negócio não existe, não há
 mês para fechar nem fornecedor para cotar. É lugar preparado, não pendência.
