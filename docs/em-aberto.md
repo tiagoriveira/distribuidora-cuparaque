@@ -11,40 +11,28 @@
 
 ---
 
-## [31/07/2026] — Arquitetura do "segundo cérebro": o que mora onde?
+## [31/07/2026] — ~~Arquitetura do "segundo cérebro"~~ → DECIDIDO, movido
 
-**Pergunta/tensão em aberto:** o founder quer manter as informações da operação (marketing,
-tarefas, rotinas, fechamento de mês) consistentes com os números do modelo, e perguntou se isso
-deve viver no Notion ou no repositório.
+**Decidido em 31/07/2026: o segundo cérebro é este repositório, aberto como vault do Obsidian.**
+Sem base de conhecimento paralela. A descrição vigente está no `CLAUDE.md` §4 e §7; a pasta de
+memória operacional é `docs/operacao/`. Histórico e critério da escolha no `docs/CHANGELOG.md`.
 
-**O que já foi decidido (31/07):**
-- **A pasta de gestão é no Notion:**
-  ["Conveniência Cuparaque"](https://app.notion.com/p/Convenciencia-Cuparaque-3aea16ed6e5f808d81b2cd9667bc047d)
-  (`3aea16ed6e5f808d81b2cd9667bc047d`). Ainda vazia. Já está no `CLAUDE.md` §7.
+**O que sobrou em aberto desta discussão — a segunda planilha:** a proposta de separar
+**"VISÃO"** (a planilha atual, o modelo projetado) de uma **"Gestão Mensal de Caixa"** (o realizado
+mês a mês, comparado contra a meta da `Cascata`).
 
-**O que continua em aberto — a segunda planilha:** a proposta é separar em duas:
-- **Planilha atual = "VISÃO"** — o modelo estratégico (Premissas → Cascata → Demanda → Cenários).
-  Muda quando uma estimativa vira número real.
-- **Planilha nova = "Gestão Mensal de Caixa"** — o realizado mês a mês (receita real por
-  categoria, custo real, pedidos/dia reais) comparado contra a meta da `Cascata`. É o *feedback
-  loop* que valida ou derruba as premissas inventadas.
+⚠️ **A decisão do Obsidian não resolve esta:** `docs/operacao/` é markdown — serve para registrar,
+não para calcular. Fechamento de mês com comparação contra meta quer planilha.
 
-**A favor:** é a única forma de um `INVENTADO` virar `COTADO` de forma sistemática — hoje não
-existe nenhum mecanismo que faça isso acontecer.
-**Contra:** é uma **terceira** fonte de números (planilha do modelo + dashboard Lovable + esta).
-A R7 e a decisão de 30/07 ("só Excel") existem justamente por causa desse risco.
+**A favor:** é o *feedback loop* que valida ou derruba as premissas inventadas.
+**Contra:** seria uma terceira fonte de números (planilha do modelo + dashboard Lovable + esta).
 
-⚠️ **Mas o argumento "contra" é mais fraco do que parece:** a planilha de gestão guarda o
-**realizado**, não o **planejado**. Não é uma segunda cópia do modelo — é o contraponto dele. Não
-há o que divergir, porque não calculam a mesma coisa.
+⚠️ **Mas o "contra" é mais fraco do que parece:** ela guarda o **realizado**, não o **planejado**.
+Não é cópia do modelo, é o contraponto dele — não há o que divergir, porque não calculam a mesma
+coisa.
 
-⚠️ **Limitação a declarar sem rodeio:** não existe sincronização automática entre nada disso. Nem
-o repositório lê o Notion, nem o Notion lê a planilha. Toda conferência é sob demanda, a pedido
-explícito. Qualquer sessão que afirmar um número "do Notion" sem ter aberto o Notion naquela hora
-está inventando.
-
-**Status:** em aberto — falta decidir a segunda planilha, e **quando** criá-la (faz sentido antes
-de existir operação para registrar?).
+**Status:** em aberto — e **não é urgente**: não há mês para fechar enquanto não houver operação.
+Reabrir quando a Fase 1 do MVP começar.
 
 ---
 

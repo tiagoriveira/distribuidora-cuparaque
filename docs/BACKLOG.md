@@ -63,6 +63,18 @@ Decisão       : BLOQUEADA por R2 (não decidir investimento antes das 4 cotaç�
 - [ ] Depois de criadas: atualizar os 7 cursos no Notion com nota de snapshot apontando para a
       planilha como fonte vigente.
 
+### Consolidação no vault do Obsidian (decidida em 31/07)
+
+- [ ] **Migrar os 7 cursos do Notion para o vault.** São o **único conteúdo do projeto que ainda
+      vive fora do repositório** depois da decisão de 31/07. Enquanto estiverem lá: não são lidos
+      automaticamente por nenhuma sessão, não têm histórico versionado, e continuam com as tabelas
+      calculadas à mão que não recalculam. ⚠️ Migrar **não** resolve o problema das tabelas — isso
+      depende das 6 abas novas acima. São dois trabalhos distintos.
+- [ ] **Decidir o que fazer com a página do Notion** ["Conveniência
+      Cuparaque"](https://app.notion.com/p/Convenciencia-Cuparaque-3aea16ed6e5f808d81b2cd9667bc047d),
+      hoje praticamente vazia. Enquanto existir sem aviso, é candidata a virar segunda fonte por
+      acidente. ⚠️ **Decisão do founder — não apagar nada por conta própria.**
+
 ### Abas propostas em 31/07 — aprovadas em escopo, não criadas
 
 > Uma sessão do Claude no Excel propôs estas duas abas e **começou a criá-las, mas a conexão com o

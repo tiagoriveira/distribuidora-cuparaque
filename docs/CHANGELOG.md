@@ -15,6 +15,63 @@
 
 ---
 
+## [31/07/2026] — Segundo cérebro consolidado no repositório, como vault do Obsidian (Claude)
+
+**Decisão do founder:** o segundo cérebro do projeto é **este repositório, aberto como vault do
+Obsidian**. Sem base de conhecimento paralela. Encerra a discussão aberta desde 30/07 sobre Notion
+× repositório.
+
+**O critério que decidiu, e vale registrar porque é reutilizável:** não é *Obsidian × Notion* — é
+**arquivo versionado × serviço externo**. O repositório é lido automaticamente no início de toda
+sessão (`CLAUDE.md` → `docs/index.md` → `docs/BACKLOG.md`); o Notion só é lido quando alguém manda.
+**Nada que exista para impedir um agente de errar pode depender de o agente lembrar de ir buscar.**
+
+Ganhos secundários, do maior para o menor: `Grep` sobre as ~1.600 linhas de docs devolve só as
+linhas que importam (não existe equivalente no Notion, cuja busca é semântica e devolve página
+inteira); o roteamento do `index.md` faz abrir 1 doc em vez de 8; o `CLAUDE.md` entra no contexto
+sem nenhuma chamada; e a resposta da API do Notion vem embrulhada em metadados que, numa página
+curta, superam o conteúdo.
+
+⚠️ **O Obsidian em si não contribui com nada disso** — ele é interface para humano (grafo,
+backlinks, mobile). O ganho vem de **os arquivos serem locais e versionados**. Com um editor de
+texto comum o custo para um agente seria idêntico. Registrado para nenhuma sessão futura atribuir
+ao Obsidian uma propriedade que ele não tem.
+
+**O custo aceito conscientemente:** os outros dois sócios editarem pelo celular fica mais difícil
+que no Notion (Obsidian mobile + sync de git dá mais atrito). Foi o único critério em que o Notion
+ganhava.
+
+**O que mudou:**
+
+- **`CLAUDE.md`** §4 e §7 — o repositório declarado como vault; convenções do vault (markdown puro
+  e `[[wikilinks]]`; **proibido Dataview e Templater**, que para um agente viram bloco inerte); e
+  **a regra que faz o arranjo funcionar ou falhar: um agente só enxerga o que foi commitado e
+  enviado.** Editar no Obsidian sem dar push faz a próxima sessão responder com a versão antiga
+  **achando que é a atual**, sem ter como perceber.
+- **`docs/operacao/` criada** — memória do **realizado**, com a divisão que evita duas fontes:
+  aqui entra o que aconteceu, na planilha fica o que é projetado. **Nenhum número do modelo é
+  repetido lá** (R7).
+- **`docs/operacao/cotacoes-recebidas.md` criada** — modelo de registro e **o fluxo de 5 passos**
+  que leva uma cotação real de `INVENTADO` a `COTADO`. ⚠️ O passo que costuma ser esquecido é o 2
+  (levar para a planilha): **registrar em Markdown não recalcula nada.** Duas travas anotadas:
+  cotação de um fornecedor só é ponto, não preço de mercado; e preço tem que vir **por categoria**,
+  nunca média, senão não alimenta a aba `Mix`.
+- **`docs/index.md`** — linhas novas nas tabelas §2 e §3, como a manutenção do próprio índice exige.
+- **`docs/em-aberto.md`** — entrada do segundo cérebro fechada; **movida a descrição, não copiada.**
+  O que sobrou em aberto é só a **segunda planilha** (gestão mensal do realizado), que a decisão do
+  Obsidian **não** resolve — `docs/operacao/` é markdown, registra mas não calcula. Marcada como
+  não urgente: não há mês para fechar sem operação.
+- **`docs/BACKLOG.md`** — dois itens novos: migrar os 7 cursos (único conteúdo ainda fora do repo) e
+  decidir o destino da página vazia do Notion, que enquanto existir é candidata a virar segunda
+  fonte por acidente. **Não apagar nada por conta própria.**
+
+**Estado da pasta de operação:** quase vazia, e **isso está certo** — o negócio não existe, não há
+mês para fechar nem fornecedor para cotar. É lugar preparado, não pendência.
+
+⚠️ **Nada foi cotado nesta sessão.** `COTADO` segue em zero e a R2 segue bloqueando.
+
+---
+
 ## [31/07/2026] — As duas divergências resolvidas + contexto de uma sessão do Claude no Excel (Claude)
 
 **Contexto:** o founder colou a transcrição de uma sessão paralela — **Claude rodando dentro do

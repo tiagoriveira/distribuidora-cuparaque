@@ -30,6 +30,8 @@ Quase todo número deste projeto é inventado, e usá-lo como fato é o erro mai
 | **Entender ou alterar um cálculo** | `docs/modelo/formulas.md` |
 | **Saber o que o modelo produz hoje** | `docs/modelo/resultados.md` |
 | Editar a planilha | `modelo/plano_conveniencia_cuparaque.xlsx` + `docs/modelo/formulas.md` |
+| **Registrar uma cotação real que chegou** | `docs/operacao/cotacoes-recebidas.md` — **e seguir o fluxo de 5 passos de lá.** Registrar sem levar para a planilha não muda resultado nenhum |
+| Fechamento de mês, rotinas, marketing — o que **aconteceu** | `docs/operacao/` |
 | Conceito financeiro (o que é margem de contribuição, ciclo financeiro, VPL) | Os 7 cursos no [Notion](https://app.notion.com/p/3aca16ed6e5f815e9c87fa7ae4592859) — não estão neste repo |
 
 ---
@@ -47,6 +49,7 @@ Quase todo número deste projeto é inventado, e usá-lo como fato é o erro mai
 | `docs/modelo/premissas.md` | Toda premissa + seu status de confiabilidade | Resultado — isso é `resultados.md` |
 | `docs/modelo/formulas.md` | As fórmulas e como se encadeiam | Os valores |
 | `docs/modelo/resultados.md` | O que o modelo produz hoje | Fonte executável — isso é a planilha |
+| `docs/operacao/` | O **realizado** — o que aconteceu de fato | O **planejado** — isso é a planilha. Nenhum número de modelo é repetido lá |
 | `modelo/*.xlsx` | **A fonte executável** do modelo | Documentação — não escreva explicação lá |
 
 ---
