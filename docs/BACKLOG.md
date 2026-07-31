@@ -63,6 +63,29 @@ Decisão       : BLOQUEADA por R2 (não decidir investimento antes das 4 cotaç�
 - [ ] Depois de criadas: atualizar os 7 cursos no Notion com nota de snapshot apontando para a
       planilha como fonte vigente.
 
+> ℹ️ **Os 7 cursos ficam no Notion** — decidido pelo founder em 31/07/2026. Não há trabalho de
+> migração pendente. A consequência (nenhuma sessão os lê automaticamente) está registrada no
+> `CLAUDE.md` §7.
+
+### Abas propostas em 31/07 — aprovadas em escopo, não criadas
+
+> Uma sessão do Claude no Excel propôs estas duas abas e **começou a criá-las, mas a conexão com o
+> add-in do Excel caiu**. ⚠️ **Confirmado: a planilha NÃO foi modificada** — nenhuma das duas
+> existe, e o `Leia-me` não recebeu a nota planejada.
+
+- [ ] **Aba `Investimento Inicial`** — hoje **não existe nenhuma seção de investimento inicial na
+      planilha**, e por isso não há como responder "qual o orçamento mínimo para começar?". Três
+      blocos: **capex** (freezer/cervejeira/expositora, balcão, prateleiras, reforma leve, PDV) +
+      **estoque de abertura** (giro inicial nas 7 categorias do `Mix`) + **capital de giro**.
+      ⚠️ O bloco de capital de giro deve puxar do **fluxo de caixa (R$ 32.500)**, não de regra de
+      bolso — ver a ressalva em `resultados.md` §5.
+- [ ] **Aba `Roteiro MVP`** — as 4 fases propostas (validação por WhatsApp sem estoque → operação
+      enxuta sem ponto → meta no equilíbrio, não na meta plena → formalização). ⚠️ **Só depois que
+      o founder confirmar o caminho** — está em `docs/em-aberto.md`.
+- [ ] **Investigar consignação com o distribuidor.** Estoque inicial em consignação é comum no
+      varejo de bebida e reduz o capital de giro da abertura. Entra na pergunta do item manual (5),
+      que já vai ser feita ao distribuidor de qualquer forma — custo marginal zero.
+
 ### Correções no modelo atual
 
 - [ ] **Recalcular o ticket mínimo de R$ 25.** Pela fórmula de margem, um pedido nesse valor tem
@@ -72,29 +95,32 @@ Decisão       : BLOQUEADA por R2 (não decidir investimento antes das 4 cotaç�
       torna o VPL negativo por construção. Sem essa linha, o projeto é compra de emprego, não
       investimento. ⚠️ Adicioná-la **aumenta** o faturamento necessário, que já está na borda do
       que a cidade comporta — é provável que o modelo não feche. Descobrir isso é o ponto.
-- [ ] **Tornar a participação de mercado um parâmetro da aba `Demanda`** (R4).
+- [ ] **Tornar a participação de mercado um parâmetro da aba `Demanda`** (R4). ℹ️ Já está feito no
+      dashboard do Lovable (slider, padrão 100%, com alerta). **Na planilha continua implícito em
+      100%** — as duas divergem nesse ponto até a planilha alcançar.
 - [ ] **Alocar entrega e perdas por categoria**, para que a curva ABC por margem use margem de
       contribuição em vez de margem bruta. Hoje o gelo aparece melhor do que provavelmente é.
 
 ---
 
-### Página web no Lovable — pedida, não executada
+### Dashboard no Lovable — criado, com 2 ajustes travados por crédito
 
-- [ ] **Criar a página web no Lovable.** Pedida pelo founder em 30/07/2026 (duas vezes). **Não foi
-      criada:** o conector MCP do Lovable caiu no meio da sessão. Ele estava ativo e funcional —
-      os workspaces chegaram a ser listados com sucesso antes da queda.
-      - **Workspace definido:** `yWut1L8QhIAJ9fMG61Ae` — "Tiago's Lovable", onde o founder é
-        **proprietário** (72 projetos, plano free). O outro (`paKQonUK9nol9R7XnpVO`, 13 projetos)
-        é onde ele entra como colaborador.
-      - **Escopo escolhido provisoriamente:** painel de leitura do estudo de viabilidade (números
-        atuais, os três achados, o que falta cotar). ⚠️ **O founder não confirmou o escopo** —
-        ver `docs/em-aberto.md`, entrada de 30/07 sobre a página web. **Confirmar antes de criar.**
-      - ⚠️ **Requisito não-negociável da página:** os números exibidos são `INVENTADO` (R1). O
-        aviso precisa estar **em destaque, não em rodapé**. Uma página bonita com "R$ 74.058/mês"
-        no topo é exatamente o mecanismo que transforma ficção em decisão — e os outros dois
-        sócios não acompanharam de onde esse número saiu.
-      - **Alternativas se o conector não voltar:** (a) escrever o prompt completo para o founder
-        colar no Lovable; (b) entregar a mesma página como HTML publicado.
+> **Criado em 30/07/2026.** Projeto **"Cuparaque Conecta"**
+> (`3e66cd92-bafc-489e-b9b4-d8a193d56977`), workspace `yWut1L8QhIAJ9fMG61Ae`. Privado, não
+> publicado. Escopo confirmado pelo founder: **dashboard editável do modelo**. Histórico completo
+> no `docs/CHANGELOG.md`.
+
+- [ ] **Corrigir bug de ponto flutuante nos campos percentuais.** O campo "Taxa de cartão/Pix"
+      exibe `1.799999999 %` em vez de `1,8 %` — a fração armazenada (0.018) é multiplicada por 100
+      sem arredondar. Conferir também participação e CMV na aba Mix, que usam o mesmo padrão.
+- [ ] **Adicionar card "o que este modelo ainda não responde" na aba DRE:** ausência da linha de
+      lucro-alvo sobre o capital, ST não implementada, curva de rampagem sem benchmark.
+- ⚠️ **Ambos travados:** o workspace do Lovable **ficou sem créditos** após o build inicial.
+      Destrava com créditos em https://lovable.dev/settings/billing.
+- [ ] **Manter dashboard e planilha sincronizados.** São duas fontes do mesmo modelo — o risco que
+      a decisão de 30/07 ("só Excel") existia para evitar. Hoje a mitigação é que **nada é
+      chumbado** no dashboard: ele recalcula tudo a partir dos inputs. **Se uma premissa mudar na
+      planilha, os padrões do dashboard precisam mudar junto**, senão as duas divergem na entrada.
 
 ---
 
@@ -112,6 +138,15 @@ Decisão       : BLOQUEADA por R2 (não decidir investimento antes das 4 cotaç�
 
 - **Divergência de arredondamento:** a planilha traz R$ 71,54 de gasto/domicílio; o recálculo de
   30/07 dá ~R$ 72,50. Origem provável: número de domicílios. Não afeta conclusão.
+- ✅ ~~Capital da rampagem: R$ 32.500 ou R$ 44.850?~~ **Resolvido em 31/07** — R$ 32.500 está certo.
+  A curva real é **côncava** (40/50/60/70/80/85…), não linear; a prosa da `premissas.md` §7 é que
+  descrevia errado. Agora é tabela mês a mês em `premissas.md` §7.1.
+- ✅ ~~Ponto de equilíbrio: ~306 ou ~302?~~ **Resolvido em 31/07** — **~306**, confirmado pela
+  célula `Cascata!B29` da própria planilha (10,2 pedidos/dia). Corrigido em `CLAUDE.md` §6 e
+  `resultados.md` §1.
+- ⚠️ **Meses 7, 8, 9 e 11 da curva de rampagem continuam desconhecidos** — ver `premissas.md` §7.1.
+  Não afeta o R$ 32.500 (que vem dos meses 1–6 e do 10, todos publicados), mas quem implementar a
+  aba `FluxoCaixa` deve tratar os 12 meses como inputs editáveis em vez de tentar recuperá-los.
 - **Conflito populacional não resolvido:** o founder citou "~8 mil habitantes" antes de enviar os
   dados de Cuparaque (3.958). O modelo usa 3.958. Ver `docs/em-aberto.md`.
 - **`openpyxl` não instalado** no ambiente — necessário para editar o .xlsx programaticamente.

@@ -89,9 +89,14 @@ docs/
     premissas.md           # TODA premissa, com status R1 (cotado/derivado/inventado)
     formulas.md            # as fórmulas do modelo, derivadas e conferidas
     resultados.md          # os números que saem delas
+  operacao/                # memória operacional — o dia a dia, quando existir operação
+    README.md              # o que entra aqui e o que NÃO entra
+    cotacoes-recebidas.md  # onde cotação real vira COTADO — o doc mais valioso do repo
 modelo/
   plano_conveniencia_cuparaque.xlsx   # o artefato vivo do modelo (7 abas, 159 fórmulas)
 ```
+
+O repositório inteiro é o **vault do Obsidian**. Abrir a pasta raiz no Obsidian já funciona.
 
 ---
 
@@ -138,8 +143,8 @@ O detalhamento item a item está em **`docs/modelo/premissas.md`**.
 | Margem de contribuição | R$ 10,09/pedido (18,4%) | Margem baixa — restringe desconto e posicionamento por preço |
 | Pedidos necessários | 1.347/mês (~45/dia) | |
 | Faturamento necessário | R$ 74.058/mês | |
-| Ponto de equilíbrio | ~302 pedidos/mês (~10/dia) | Folga de segurança grande |
-| **Capital da rampagem** | **~R$ 32.500** | Não aparecia em lugar nenhum do modelo original |
+| Ponto de equilíbrio | ~302 pedidos/mês (~10/dia) | ⚠️ Recálculo de 30/07 dá **~306** — ver `docs/BACKLOG.md`. Folga de segurança grande de qualquer forma |
+| **Capital da rampagem** | **~R$ 32.500** | ⚠️ **Divergência aberta:** a curva como documentada em `premissas.md` §7 dá **R$ 44.850**. Ver `docs/BACKLOG.md` |
 | **Resultado em DRE** | **−R$ 659/mês** | Prejuízo, pela depreciação não coberta |
 
 ⚠️ **Três achados de 30/07/2026 que o modelo original não mostrava** — detalhe em
@@ -158,8 +163,19 @@ O detalhamento item a item está em **`docs/modelo/premissas.md`**.
 | Artefato | Onde | Papel |
 |---|---|---|
 | **Planilha do modelo** | `modelo/plano_conveniencia_cuparaque.xlsx` | **Fonte executável.** 7 abas, 159 fórmulas encadeadas a partir de `Premissas` |
-| **7 cursos de gestão financeira** | [Notion](https://app.notion.com/p/3aca16ed6e5f815e9c87fa7ae4592859) | Material didático: margem, fluxo de caixa, valuation, precificação, estoque, concorrência, DRE |
+| **Dashboard editável** | Lovable, projeto `3e66cd92-bafc-489e-b9b4-d8a193d56977` ("Cuparaque Conecta") | Espelho **interativo** do modelo — 7 abas, nada chumbado, recalcula tudo dos inputs. **Não é fonte de verdade:** se divergir da planilha, a planilha manda |
+| **7 cursos de gestão financeira** | [Notion](https://app.notion.com/p/3aca16ed6e5f815e9c87fa7ae4592859) | Material didático: margem, fluxo de caixa, valuation, precificação, estoque, concorrência, DRE. **Ficam no Notion por decisão do founder (31/07/2026)** — é a única exceção ao vault, e é deliberada. ⚠️ Consequência: **nenhuma sessão os lê automaticamente.** Quem precisar de um conceito de lá tem que abrir o Notion de propósito |
 | **Briefing de handoff** | Processado para `docs/CHANGELOG.md` e `docs/em-aberto.md` | Origem do projeto (29/07/2026) |
+
+**Segundo cérebro = este repositório, aberto como vault do Obsidian.** Decisão do founder,
+31/07/2026. Não há base de conhecimento paralela: gestão operacional vive em `docs/operacao/`.
+
+> ⚠️ **A regra que faz isso funcionar ou falhar: um agente só enxerga o que foi commitado e
+> enviado.** Editar no Obsidian e não dar push significa que a próxima sessão responde com a versão
+> antiga **achando que é a atual** — e não tem como perceber. Não existe meio-termo aqui.
+
+**Convenções do vault:** markdown puro e `[[wikilinks]]` (ambos legíveis por agente). **Não usar
+Dataview nem Templater** — para um agente viram bloco de código inerte, e o conteúdo desaparece.
 
 **Abas da planilha:** `Leia-me` · `Premissas` (todos os inputs) · `Mix` (CMV ponderado) ·
 `Cascata` (o cálculo reverso) · `Demanda` (teste de realidade) · `Cenarios` (sensibilidade) ·

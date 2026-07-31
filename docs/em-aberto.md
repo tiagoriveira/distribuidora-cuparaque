@@ -11,33 +11,76 @@
 
 ---
 
-## [30/07/2026] — Página web no Lovable: página de quê?
+## [31/07/2026] — ~~Arquitetura do "segundo cérebro"~~ → DECIDIDO, movido
 
-**Pergunta/tensão em aberto:** o founder pediu **duas vezes** "criar uma página web no Lovable",
-sem especificar o conteúdo, e não respondeu quando as opções foram apresentadas. A ambiguidade é
-real porque **minutos antes ele havia decidido "só Excel, sem página web"** para o modelo
-financeiro — então a página provavelmente é outra coisa, mas não se sabe qual.
+**Decidido em 31/07/2026: o segundo cérebro é este repositório, aberto como vault do Obsidian.**
+Sem base de conhecimento paralela. A descrição vigente está no `CLAUDE.md` §4 e §7; a pasta de
+memória operacional é `docs/operacao/`. Histórico e critério da escolha no `docs/CHANGELOG.md`.
 
-**O que já se sabe:**
-- Workspace definido: `yWut1L8QhIAJ9fMG61Ae` (onde ele é proprietário).
-- O conector do Lovable caiu antes de qualquer coisa ser criada. **Nada foi feito lá.**
+**O que sobrou em aberto desta discussão — a segunda planilha:** a proposta de separar
+**"VISÃO"** (a planilha atual, o modelo projetado) de uma **"Gestão Mensal de Caixa"** (o realizado
+mês a mês, comparado contra a meta da `Cascata`).
 
-**Opções na mesa:**
-- **Vitrine / cardápio da conveniência** — produtos, combos, horário, área de entrega, botão que
-  abre o WhatsApp com o pedido. Prós: **é a única das quatro que gera receita**, e não depende de
-  nenhuma cotação para começar a valer. Contras: é ferramenta de venda de um negócio que ainda não
-  existe.
-- **Painel de leitura do estudo** *(escolha provisória)* — números, os três achados, o que falta
-  cotar. Prós: serve para alinhar os outros dois sócios; sem risco de divergir do Excel. Contras:
-  não produz nada além de comunicação.
-- **Dashboard editável do modelo financeiro** — prós: o modelo fica acessível no celular.
-  Contras: **contraria a decisão de 30/07** ("planilha fica no Excel") e cria segunda fonte que
-  pode divergir — exatamente o que R7 existe para evitar.
-- **Painel operacional** (pedidos, estoque, ruptura) — já está no `ROADMAP.md`, esperando a loja
-  existir.
+⚠️ **A decisão do Obsidian não resolve esta:** `docs/operacao/` é markdown — serve para registrar,
+não para calcular. Fechamento de mês com comparação contra meta quer planilha.
 
-**Status:** em aberto — **perguntar antes de criar.** A escolha provisória foi o painel de leitura,
-mas ela não foi confirmada pelo founder.
+**A favor:** é o *feedback loop* que valida ou derruba as premissas inventadas.
+**Contra:** seria uma terceira fonte de números (planilha do modelo + dashboard Lovable + esta).
+
+⚠️ **Mas o "contra" é mais fraco do que parece:** ela guarda o **realizado**, não o **planejado**.
+Não é cópia do modelo, é o contraponto dele — não há o que divergir, porque não calculam a mesma
+coisa.
+
+**Status:** em aberto — e **não é urgente**: não há mês para fechar enquanto não houver operação.
+Reabrir quando a Fase 1 do MVP começar.
+
+---
+
+## [31/07/2026] — Qual o caminho para o MVP?
+
+**Pergunta/tensão em aberto:** o founder perguntou qual caminho de MVP seria recomendado. Uma
+sessão de 31/07 propôs quatro fases; **nada foi decidido**.
+
+**A proposta na mesa:**
+- **Fase 0 — validar sem estoque:** pré-venda por WhatsApp/grupo local por 2–3 semanas, sem loja,
+  testando 1–2 combos. Objetivo: ver se a recompra por domicílio é real.
+- **Fase 1 — operação enxuta:** freezer doméstico + garagem, 15–20 SKUs, priorizando as
+  categorias de maior margem (gelo/carvão/descartáveis, snacks). Sem alugar ponto.
+- **Fase 2 — mirar o equilíbrio, não a meta plena:** o primeiro marco é **~10,2 pedidos/dia**
+  (`Cascata!B29`), não os ~44,9 da meta de retirada. Capex só depois de sustentar isso 1–2 meses.
+- **Fase 3 — formalização:** CNPJ, alvará de bebida e Simples quando o volume justificar.
+
+**O que sustenta essa direção:** a aba `Ofertas` da planilha já registra que *"operar sem ponto
+próprio no início é a economia mais óbvia a testar"* — a Fase 1 é a execução disso. E a Fase 0
+ataca diretamente a premissa mais frágil do modelo (frequência de recompra), com custo quase zero.
+
+⚠️ **O que essa proposta NÃO resolve, e precisa ser dito:** ela **não substitui as 7 cotações de
+campo** (`BACKLOG.md`). Rodar Fase 0 e Fase 1 sem saber o CMV real do distribuidor é operar sem
+saber se cada venda dá lucro. A Fase 0 valida **demanda**; ela não valida **margem**.
+
+⚠️ **Tensão com a R2:** a Fase 1 já envolve comprar estoque e um freezer — é decisão de
+investimento, ainda que pequena. Formalmente a R2 a bloqueia. Vale o founder decidir se a R2 se
+aplica ao MVP enxuto ou só ao investimento cheio; hoje o texto da R2 não distingue.
+
+**Status:** em aberto — proposta de uma sessão de IA, não decisão do founder.
+
+---
+
+## [31/07/2026] — O distrito de Aldeia entra no raio de entrega?
+
+**Pergunta/tensão em aberto:** `premissas.md` §2 registra que a população de Cuparaque se concentra
+"no núcleo urbano **e no distrito de Aldeia**". A premissa de **80% dos domicílios no raio de
+entrega** não diz se Aldeia está dentro ou fora.
+
+**Por que importa:** muda direto a base de `Demanda!C10` (domicílios endereçáveis), que é o
+denominador do teste de realidade inteiro. **Decisão de custo baixo e impacto alto** — é só definir
+o raio, mas move o veredito de plausibilidade.
+
+**Relação com outro item aberto:** pode ser a explicação do conflito populacional (3.958 × "~8
+mil") logo abaixo — se o founder pensava na região atendida e não no município. **Vale responder
+as duas juntas.**
+
+**Status:** em aberto — pergunta simples para o founder.
 
 ---
 
