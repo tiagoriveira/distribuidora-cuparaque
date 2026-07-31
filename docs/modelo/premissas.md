@@ -146,13 +146,47 @@ superestimado**. Numa loja majoritariamente de bebida, o efeito pode ser relevan
 
 | Premissa | Valor usado | Onde entra | Nota |
 |---|---|---|---|
-| Curva de rampagem | 40% no mês 1 → 100% no mês 11 | Fluxo de caixa | **Sem benchmark, sem fonte.** Determina o capital de giro da abertura |
+| Curva de rampagem | ver tabela abaixo | Fluxo de caixa | **Sem benchmark, sem fonte.** Determina o capital de giro da abertura |
 | Investimento fixo | R$ 40.000 | DRE (depreciação), payback | Freezers, balcão, reforma, moto |
 | Vida útil / depreciação | 5 anos, linear → R$ 667/mês | DRE | Critério gerencial, não fiscal |
 | Taxa de desconto | 12% ao ano | Valuation, custo de carregar estoque | **Escolhida como número redondo.** Não é referência de mercado |
 | Cobertura de estoque | 15 dias | Estoque, capital de giro | |
 | Lead time do fornecedor | 3 dias | Ponto de pedido | ⚠️ **Desconhecido de verdade** — pode ser semanal, o que muda tudo |
 | Prazo do fornecedor (PMP) | 0 dias (à vista) | Ciclo financeiro | Premissa pessimista: CNPJ novo sem histórico |
+
+### 7.1 A curva de rampagem, mês a mês
+
+> ⚠️ **[CORREÇÃO 31/07/2026]** Até 30/07 esta linha dizia *"40% no mês 1 → 100% no mês 11"*, o que
+> se lê naturalmente como uma reta (+6 pontos/mês). **A curva real não é linear — é côncava**:
+> sobe rápido no início e achata no fim. Tomar a descrição antiga ao pé da letra produz um capital
+> de rampagem de **R$ 44.850** em vez dos **R$ 32.500** corretos — uma diferença de R$ 12 mil no
+> número que diz quanto dinheiro precisa existir antes de abrir. **A prosa era o erro, não o
+> R$ 32.500.** Por isso esta premissa agora é uma tabela: descrever curva em prosa não sobrevive
+> ao próximo leitor.
+
+| Mês | % do faturamento maduro | Como se sabe |
+|---|---|---|
+| 1 | 40% | Publicado em `resultados.md` §4.1 |
+| 2 | 50% | `DERIVADO` — reconstruído |
+| 3 | 60% | Publicado em `resultados.md` §4.1 |
+| 4 | 70% | `DERIVADO` — reconstruído |
+| 5 | 80% | `DERIVADO` — reconstruído |
+| 6 | 85% | Publicado em `resultados.md` §4.1 |
+| 7–9 | **não determinado** | Entre 85% e 97%, formato exato desconhecido |
+| 10 | 97% | Publicado em `resultados.md` §4.1 |
+| 11 | **não determinado** | Entre 97% e 100% |
+| 12 | 100% | Publicado em `resultados.md` §4.1 |
+
+**Como os meses 2, 4 e 5 foram reconstruídos** (31/07/2026): os percentuais 40/50/60/70/80/85
+reproduzem **exatamente** os três saldos acumulados publicados em `resultados.md` §4.1
+(−8.145 no mês 1, −20.349 no mês 3, −29.124 no mês 6). Nenhuma outra interpolação testada fecha nos
+três pontos ao mesmo tempo, então a reconstrução é considerada confiável.
+
+⚠️ **Os meses 7, 8, 9 e 11 continuam desconhecidos.** Várias interpolações chegam perto do
+−32.564 do mês 10, **nenhuma bate exatamente**, e não vou escolher uma e apresentá-la como se
+fosse a original (R6). Quem for implementar a aba `FluxoCaixa` deve tratar os 12 meses como
+**inputs editáveis** — que é o que o dashboard do Lovable já faz — em vez de tentar recuperar a
+curva original.
 
 ---
 

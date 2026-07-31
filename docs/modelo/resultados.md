@@ -22,11 +22,33 @@
 | **Faturamento necessário** | **R$ 74.058/mês** |
 | Pedidos/dia | ~45 |
 | Pedidos/hora (9h/dia) | ~5 |
-| **Ponto de equilíbrio** | **~302 pedidos/mês (~10/dia)** |
+| **Ponto de equilíbrio** | **~306 pedidos/mês (~10,2/dia)** |
+
+> ⚠️ **[CORREÇÃO 31/07/2026]** Esta linha dizia **~302 pedidos/mês**. O valor certo é **~306**
+> (`3.091 ÷ 10,0936 = 306,2`). Confirmado por duas vias independentes: o recálculo à mão e a
+> **própria planilha**, cuja célula `Cascata!B29` traz **10,2 pedidos/dia** — que × 30 dias dá 306,
+> não 302. Diferença sem efeito em nenhuma conclusão, mas o número errado estava replicado em
+> `CLAUDE.md` §6 e no CHANGELOG de 29/07.
 
 **Leitura da folga:** o equilíbrio exige ~10 pedidos/dia e a meta exige ~45. É uma **folga de
 segurança grande** — um mês ruim não quebra a empresa, só reduz a retirada. Essa é a melhor
 notícia do modelo.
+
+### 1.1 Mapa de células — onde cada resultado vive na planilha
+
+> Levantado em 31/07/2026 por uma sessão que abriu o `.xlsx` diretamente. **Útil para não ter que
+> reabrir a planilha só para localizar um número.**
+
+| Célula | O que é |
+|---|---|
+| `Premissas!C22` | Custo fixo total (R$ 3.091/mês) |
+| `Cascata!B22` | Pedidos/dia na meta plena (~44,9) |
+| `Cascata!B29` | Pedidos/dia no ponto de equilíbrio (~10,2) |
+| `Mix!A6:B13` | As 7 categorias e suas participações |
+| `Demanda!C10` | Domicílios endereçáveis |
+| `Ofertas!A6:A11` | Os combos |
+| `Leia-me!A28` | Aviso "NÃO VERIFICADO" — cobre custos, CMV, entrega, embalagem, perdas, cartão |
+| `Leia-me!A40` | Registro do conflito populacional (3.958 × "~8 mil") |
 
 ---
 
@@ -162,8 +184,18 @@ ticket mínimo de R$ 25 precisa ser recalculado.**
 | Pergunta | Status |
 |---|---|
 | Vale a pena como investimento? | **VPL negativo** — não há linha de retorno ao capital. É compra de emprego, não investimento |
-| Quanto é o investimento inicial? | Sem orçamento. Nenhum item cotado |
+| Quanto é o investimento inicial? | Sem orçamento. Nenhum item cotado. **Confirmado em 31/07:** a planilha **não tem nenhuma aba ou seção de investimento inicial** — não existe célula de "orçamento mínimo para iniciar" |
 | Qual o capital de giro? | Estimável (~R$ 24.920 com 15 dias de cobertura), mas depende do lead time real do distribuidor |
 | Existe concorrência? | **Não mapeada.** Pode invalidar a projeção de demanda inteira |
 | A alíquota está certa? | Provavelmente superestimada (ST não implementada) |
 | A curva de rampagem é essa? | Inventada. Sem benchmark |
+
+⚠️ **Sobre a regra "reservar 3 a 6 meses de custo fixo" como colchão de caixa.** Ela circulou numa
+sessão de 31/07 e daria R$ 9,3 mil–R$ 18,5 mil. **Não use.** Dois problemas:
+
+1. **É regra de bolso sem fonte** — cai na R5 exatamente como o "3 a 5% do orçamento familiar"
+   já registrado em `premissas.md` §8.
+2. **Ela ignora o termo que domina a conta.** O buraco da rampagem não é o custo fixo de
+   R$ 3.091 — é a **retirada dos sócios de R$ 10.500/mês**, que é 3,4× maior. Por isso o número
+   real é **R$ 32.500** (§4.1), não R$ 9–18 mil. A regra de bolso subestima o colchão em **2 a 3
+   vezes**, e erra justamente para o lado que quebra a empresa.

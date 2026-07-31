@@ -15,6 +15,84 @@
 
 ---
 
+## [31/07/2026] — As duas divergências resolvidas + contexto de uma sessão do Claude no Excel (Claude)
+
+**Contexto:** o founder colou a transcrição de uma sessão paralela — **Claude rodando dentro do
+Excel**, com acesso direto ao `.xlsx` e **sem acesso a este repositório** (o conector de GitHub não
+estava disponível lá). Essa sessão respondeu sobre orçamento inicial, MVP e arquitetura de "segundo
+cérebro". Esta entrada processa aquele material para os docs certos.
+
+⚠️ **Ressalva importante sobre a procedência:** aquela sessão **não operava sob as restrições
+R1–R7** — ela não conseguiu ler o `CLAUDE.md`. As recomendações dela são úteis, mas não nasceram
+sob as regras deste projeto e foram filtradas por elas aqui.
+
+### As duas divergências abertas em 30/07 estão RESOLVIDAS
+
+**1. Capital da rampagem: R$ 32.500 está certo. Meu R$ 44.850 estava errado.** `[CORREÇÃO 31/07]`
+da entrada abaixo. A tabela em `resultados.md` §4.1 publica quatro pontos da curva original
+(40% no mês 1, 60% no 3, 85% no 6, 97% no 10) — e a curva **é côncava, não linear**. Os
+percentuais **40/50/60/70/80/85** reproduzem **exatamente** os três saldos acumulados publicados
+(−8.145, −20.349, −29.124). Nenhuma outra interpolação testada fecha nos três pontos.
+**O erro era a descrição em prosa** da `premissas.md` §7 — *"40% no mês 1 → 100% no mês 11"* lê-se
+como reta (+6 pontos/mês), e tomá-la ao pé da letra é o que produziu R$ 44.850. Corrigido: a curva
+agora é **tabela mês a mês** (`premissas.md` §7.1), não prosa. Os meses 7–9 e 11 continuam
+desconhecidos e estão marcados como tal (R6).
+
+**2. Ponto de equilíbrio: ~306, não ~302.** Confirmado por via independente: a célula
+`Cascata!B29` da própria planilha traz **10,2 pedidos/dia** → 306/mês. O "~302" estava replicado em
+`CLAUDE.md` §6, `resultados.md` §1 e no CHANGELOG de 29/07. Corrigido nos dois primeiros; o de
+29/07 fica como está (append-only).
+
+**A lição das duas:** ambas vieram de **número descrito em prosa em vez de tabelado**. É a mesma
+falha que a R7 ataca, num lugar onde ninguém tinha olhado — a *documentação* da premissa, não a
+planilha.
+
+### O que a sessão do Excel apurou sobre a planilha
+
+- **Não existe nenhuma seção de investimento inicial na planilha.** Não há como responder "qual o
+  orçamento mínimo para começar?" — confirmado lendo o arquivo. Vira item de BACKLOG.
+- **Mapa de células levantado** e registrado em `resultados.md` §1.1 (`Premissas!C22`,
+  `Cascata!B22`, `Cascata!B29`, `Mix!A6:B13`, `Demanda!C10`, `Ofertas!A6:A11`, `Leia-me!A28`,
+  `Leia-me!A40`). Evita reabrir o `.xlsx` só para localizar um número.
+- **Confirmado que o aviso de "não verificado" já existe** na aba `Leia-me`, e que os combos da aba
+  `Ofertas` carregam a mesma ressalva.
+- ⚠️ **A planilha NÃO foi modificada.** Aquela sessão tentou criar as abas `Roteiro MVP` e
+  `Investimento Inicial` e falhou — a conexão com o add-in do Excel caiu. Nada entrou.
+
+### Uma recomendação daquela sessão foi rejeitada
+
+**"Reservar 3 a 6 meses de custo fixo como colchão de caixa" (R$ 9,3 mil–R$ 18,5 mil).** Não é para
+usar, por dois motivos, agora registrados em `resultados.md` §5: (a) é regra de bolso sem fonte
+(R5); (b) **ignora o termo dominante** — o buraco da rampagem não é o custo fixo de R$ 3.091, é a
+retirada de R$ 10.500/mês, 3,4× maior. Por isso o número real é R$ 32.500. A regra subestima o
+colchão em 2–3× e erra **para o lado que quebra a empresa**.
+
+### Decisão do founder registrada
+
+**A pasta de gestão operacional é no Notion:**
+["Conveniência Cuparaque"](https://app.notion.com/p/Convenciencia-Cuparaque-3aea16ed6e5f808d81b2cd9667bc047d)
+(`3aea16ed6e5f808d81b2cd9667bc047d`), ainda vazia. Entrou no `CLAUDE.md` §7 com a ressalva de que
+**não é fonte de número do modelo** — número vive na planilha.
+
+### Três decisões abertas registradas em `docs/em-aberto.md`
+
+1. **Arquitetura do segundo cérebro** — falta decidir a **segunda planilha** (gestão mensal de
+   caixa, o realizado contra a meta). Nota registrada: ela **não** é terceira cópia do modelo,
+   porque guarda o realizado, não o planejado — não há o que divergir.
+2. **Caminho do MVP** — as 4 fases propostas (validação por WhatsApp → operação enxuta sem ponto →
+   mirar o equilíbrio → formalização). ⚠️ Duas ressalvas anexadas: a Fase 0 valida **demanda, não
+   margem**, e não substitui as cotações; e a Fase 1 já é decisão de investimento, o que **tensiona
+   a R2** — que hoje não distingue MVP enxuto de investimento cheio.
+3. **Distrito de Aldeia entra no raio de entrega?** Muda `Demanda!C10` direto. Pode ser a
+   explicação do conflito populacional (3.958 × "~8 mil") — vale responder as duas juntas.
+
+### Nada foi cotado
+
+⚠️ Continua **zero** cotações reais. Nenhuma pesquisa externa foi feita nesta sessão. `CLAUDE.md`
+§5 segue valendo integralmente.
+
+---
+
 ## [30/07/2026] — Dashboard editável criado no Lovable + duas divergências aritméticas encontradas (Claude)
 
 **Contexto:** sessão seguinte à da criação do repositório. O founder pediu, de novo, a página web no

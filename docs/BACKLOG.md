@@ -63,6 +63,25 @@ Decisão       : BLOQUEADA por R2 (não decidir investimento antes das 4 cotaç�
 - [ ] Depois de criadas: atualizar os 7 cursos no Notion com nota de snapshot apontando para a
       planilha como fonte vigente.
 
+### Abas propostas em 31/07 — aprovadas em escopo, não criadas
+
+> Uma sessão do Claude no Excel propôs estas duas abas e **começou a criá-las, mas a conexão com o
+> add-in do Excel caiu**. ⚠️ **Confirmado: a planilha NÃO foi modificada** — nenhuma das duas
+> existe, e o `Leia-me` não recebeu a nota planejada.
+
+- [ ] **Aba `Investimento Inicial`** — hoje **não existe nenhuma seção de investimento inicial na
+      planilha**, e por isso não há como responder "qual o orçamento mínimo para começar?". Três
+      blocos: **capex** (freezer/cervejeira/expositora, balcão, prateleiras, reforma leve, PDV) +
+      **estoque de abertura** (giro inicial nas 7 categorias do `Mix`) + **capital de giro**.
+      ⚠️ O bloco de capital de giro deve puxar do **fluxo de caixa (R$ 32.500)**, não de regra de
+      bolso — ver a ressalva em `resultados.md` §5.
+- [ ] **Aba `Roteiro MVP`** — as 4 fases propostas (validação por WhatsApp sem estoque → operação
+      enxuta sem ponto → meta no equilíbrio, não na meta plena → formalização). ⚠️ **Só depois que
+      o founder confirmar o caminho** — está em `docs/em-aberto.md`.
+- [ ] **Investigar consignação com o distribuidor.** Estoque inicial em consignação é comum no
+      varejo de bebida e reduz o capital de giro da abertura. Entra na pergunta do item manual (5),
+      que já vai ser feita ao distribuidor de qualquer forma — custo marginal zero.
+
 ### Correções no modelo atual
 
 - [ ] **Recalcular o ticket mínimo de R$ 25.** Pela fórmula de margem, um pedido nesse valor tem
@@ -115,15 +134,15 @@ Decisão       : BLOQUEADA por R2 (não decidir investimento antes das 4 cotaç�
 
 - **Divergência de arredondamento:** a planilha traz R$ 71,54 de gasto/domicílio; o recálculo de
   30/07 dá ~R$ 72,50. Origem provável: número de domicílios. Não afeta conclusão.
-- ⚠️ **Capital da rampagem: R$ 32.500 ou R$ 44.850?** Reproduzindo a curva **exatamente como
-  `docs/modelo/premissas.md` §7 a descreve** (40% no mês 1 → 100% no mês 11, linear = +6 pontos/mês)
-  com retirada integral, o pior saldo acumulado dá **−R$ 44.850**. O `CLAUDE.md` §6 e o CHANGELOG
-  registram **~R$ 32.500**. **Não sei qual está certo** — a curva original provavelmente tinha outro
-  formato, que não ficou documentado. **Resolve-se documentando os 12 percentuais mês a mês**, em
-  vez de descrever a curva em prosa. Impacto: é o número que diz quanto dinheiro precisa existir
-  antes de abrir — a diferença é de R$ 12 mil.
-- **Ponto de equilíbrio: ~306, não ~302 pedidos/mês.** `3.091 ÷ 10,0936 = 306,2`. O `CLAUDE.md` §6
-  e o CHANGELOG de 29/07 dizem ~302. Diferença pequena, sem efeito em conclusão nenhuma.
+- ✅ ~~Capital da rampagem: R$ 32.500 ou R$ 44.850?~~ **Resolvido em 31/07** — R$ 32.500 está certo.
+  A curva real é **côncava** (40/50/60/70/80/85…), não linear; a prosa da `premissas.md` §7 é que
+  descrevia errado. Agora é tabela mês a mês em `premissas.md` §7.1.
+- ✅ ~~Ponto de equilíbrio: ~306 ou ~302?~~ **Resolvido em 31/07** — **~306**, confirmado pela
+  célula `Cascata!B29` da própria planilha (10,2 pedidos/dia). Corrigido em `CLAUDE.md` §6 e
+  `resultados.md` §1.
+- ⚠️ **Meses 7, 8, 9 e 11 da curva de rampagem continuam desconhecidos** — ver `premissas.md` §7.1.
+  Não afeta o R$ 32.500 (que vem dos meses 1–6 e do 10, todos publicados), mas quem implementar a
+  aba `FluxoCaixa` deve tratar os 12 meses como inputs editáveis em vez de tentar recuperá-los.
 - **Conflito populacional não resolvido:** o founder citou "~8 mil habitantes" antes de enviar os
   dados de Cuparaque (3.958). O modelo usa 3.958. Ver `docs/em-aberto.md`.
 - **`openpyxl` não instalado** no ambiente — necessário para editar o .xlsx programaticamente.

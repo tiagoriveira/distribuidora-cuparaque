@@ -11,6 +11,91 @@
 
 ---
 
+## [31/07/2026] — Arquitetura do "segundo cérebro": o que mora onde?
+
+**Pergunta/tensão em aberto:** o founder quer manter as informações da operação (marketing,
+tarefas, rotinas, fechamento de mês) consistentes com os números do modelo, e perguntou se isso
+deve viver no Notion ou no repositório.
+
+**O que já foi decidido (31/07):**
+- **A pasta de gestão é no Notion:**
+  ["Conveniência Cuparaque"](https://app.notion.com/p/Convenciencia-Cuparaque-3aea16ed6e5f808d81b2cd9667bc047d)
+  (`3aea16ed6e5f808d81b2cd9667bc047d`). Ainda vazia. Já está no `CLAUDE.md` §7.
+
+**O que continua em aberto — a segunda planilha:** a proposta é separar em duas:
+- **Planilha atual = "VISÃO"** — o modelo estratégico (Premissas → Cascata → Demanda → Cenários).
+  Muda quando uma estimativa vira número real.
+- **Planilha nova = "Gestão Mensal de Caixa"** — o realizado mês a mês (receita real por
+  categoria, custo real, pedidos/dia reais) comparado contra a meta da `Cascata`. É o *feedback
+  loop* que valida ou derruba as premissas inventadas.
+
+**A favor:** é a única forma de um `INVENTADO` virar `COTADO` de forma sistemática — hoje não
+existe nenhum mecanismo que faça isso acontecer.
+**Contra:** é uma **terceira** fonte de números (planilha do modelo + dashboard Lovable + esta).
+A R7 e a decisão de 30/07 ("só Excel") existem justamente por causa desse risco.
+
+⚠️ **Mas o argumento "contra" é mais fraco do que parece:** a planilha de gestão guarda o
+**realizado**, não o **planejado**. Não é uma segunda cópia do modelo — é o contraponto dele. Não
+há o que divergir, porque não calculam a mesma coisa.
+
+⚠️ **Limitação a declarar sem rodeio:** não existe sincronização automática entre nada disso. Nem
+o repositório lê o Notion, nem o Notion lê a planilha. Toda conferência é sob demanda, a pedido
+explícito. Qualquer sessão que afirmar um número "do Notion" sem ter aberto o Notion naquela hora
+está inventando.
+
+**Status:** em aberto — falta decidir a segunda planilha, e **quando** criá-la (faz sentido antes
+de existir operação para registrar?).
+
+---
+
+## [31/07/2026] — Qual o caminho para o MVP?
+
+**Pergunta/tensão em aberto:** o founder perguntou qual caminho de MVP seria recomendado. Uma
+sessão de 31/07 propôs quatro fases; **nada foi decidido**.
+
+**A proposta na mesa:**
+- **Fase 0 — validar sem estoque:** pré-venda por WhatsApp/grupo local por 2–3 semanas, sem loja,
+  testando 1–2 combos. Objetivo: ver se a recompra por domicílio é real.
+- **Fase 1 — operação enxuta:** freezer doméstico + garagem, 15–20 SKUs, priorizando as
+  categorias de maior margem (gelo/carvão/descartáveis, snacks). Sem alugar ponto.
+- **Fase 2 — mirar o equilíbrio, não a meta plena:** o primeiro marco é **~10,2 pedidos/dia**
+  (`Cascata!B29`), não os ~44,9 da meta de retirada. Capex só depois de sustentar isso 1–2 meses.
+- **Fase 3 — formalização:** CNPJ, alvará de bebida e Simples quando o volume justificar.
+
+**O que sustenta essa direção:** a aba `Ofertas` da planilha já registra que *"operar sem ponto
+próprio no início é a economia mais óbvia a testar"* — a Fase 1 é a execução disso. E a Fase 0
+ataca diretamente a premissa mais frágil do modelo (frequência de recompra), com custo quase zero.
+
+⚠️ **O que essa proposta NÃO resolve, e precisa ser dito:** ela **não substitui as 7 cotações de
+campo** (`BACKLOG.md`). Rodar Fase 0 e Fase 1 sem saber o CMV real do distribuidor é operar sem
+saber se cada venda dá lucro. A Fase 0 valida **demanda**; ela não valida **margem**.
+
+⚠️ **Tensão com a R2:** a Fase 1 já envolve comprar estoque e um freezer — é decisão de
+investimento, ainda que pequena. Formalmente a R2 a bloqueia. Vale o founder decidir se a R2 se
+aplica ao MVP enxuto ou só ao investimento cheio; hoje o texto da R2 não distingue.
+
+**Status:** em aberto — proposta de uma sessão de IA, não decisão do founder.
+
+---
+
+## [31/07/2026] — O distrito de Aldeia entra no raio de entrega?
+
+**Pergunta/tensão em aberto:** `premissas.md` §2 registra que a população de Cuparaque se concentra
+"no núcleo urbano **e no distrito de Aldeia**". A premissa de **80% dos domicílios no raio de
+entrega** não diz se Aldeia está dentro ou fora.
+
+**Por que importa:** muda direto a base de `Demanda!C10` (domicílios endereçáveis), que é o
+denominador do teste de realidade inteiro. **Decisão de custo baixo e impacto alto** — é só definir
+o raio, mas move o veredito de plausibilidade.
+
+**Relação com outro item aberto:** pode ser a explicação do conflito populacional (3.958 × "~8
+mil") logo abaixo — se o founder pensava na região atendida e não no município. **Vale responder
+as duas juntas.**
+
+**Status:** em aberto — pergunta simples para o founder.
+
+---
+
 ## [30/07/2026] — Isto é um emprego ou um investimento?
 
 **Pergunta/tensão em aberto:** o modelo, como está desenhado, aloca **todo** o resultado como
