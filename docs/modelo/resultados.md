@@ -190,6 +190,68 @@ ticket mínimo de R$ 25 precisa ser recalculado.**
 | A alíquota está certa? | Provavelmente superestimada (ST não implementada) |
 | A curva de rampagem é essa? | Inventada. Sem benchmark |
 
+---
+
+## 6. Emprego ou negócio? A decomposição que responde
+
+> Produzida em 31/07/2026. Toda a aritmética abaixo é `DERIVADO` de premissas `INVENTADO` — mas a
+> **estrutura** da conclusão não depende dos valores exatos: ela vem da razão entre as parcelas,
+> não do tamanho delas.
+
+### 6.1 Para onde vão os R$ 13.591/mês que o negócio precisa gerar
+
+| Destino | R$/mês | % |
+|---|---|---|
+| Pagar o **trabalho** dos sócios (pró-labore) | 10.500 | **77,3%** |
+| Pagar a **estrutura** (custo fixo) | 3.091 | 22,7% |
+| Pagar o **capital** investido | **0** | **0%** |
+
+**77,3% de todo o esforço do negócio existe para pagar mão de obra. Zero paga o capital.** É a
+definição financeira de emprego: parou de trabalhar, parou a renda. A remuneração por hora é
+**R$ 3.500 ÷ 270h ≈ R$ 12,96/hora** por sócio (`DERIVADO`), sem revezamento.
+
+### 6.2 O teste da substituição
+
+> **Se você contratasse alguém para fazer tudo que você faz, ainda sobraria lucro?**
+
+Se não, é emprego — independente de haver CNPJ, ponto e estoque. São **810 horas/mês** a substituir
+(3 sócios × 270h).
+
+### 6.3 O achado que muda a prioridade
+
+Duas contas, ambas `DERIVADO`, com MC de R$ 10,0936/pedido:
+
+| Linha que falta no modelo | Custo mensal | Pedidos/mês exigidos a mais | Por dia |
+|---|---|---|---|
+| **Retorno ao capital** — R$ 72.500 (R$ 40.000 de investimento + R$ 32.500 de rampagem) a 12% a.a. | R$ 725 | **+72** | +2,4 |
+| **Mão de obra contratada** — por cada R$ 1.000 de folha | R$ 1.000 | **+99** | +3,3 |
+
+**O capital não é o problema — o trabalho é.** Adicionar a linha de lucro-alvo sobre o capital leva
+a exigência de 1.347 para **1.418 pedidos/mês** (47/dia), e o gasto por domicílio de 1,32 para
+**1,39 compras/mês** — a 100% de participação. É um agravamento modesto.
+
+Já a folha é proibitiva: com margem de contribuição de R$ 10,09 (18,4%), **este modelo não absorve
+funcionário**. A premissa de "funcionário fixo = R$ 0" em `premissas.md` §3 **não é uma escolha
+operacional — é a única forma de a conta fechar.**
+
+### 6.4 O que um modelo precisa ter para ser negócio e não emprego
+
+Derivado do acima. **Nenhum dos quatro é sobre qual produto se vende:**
+
+1. **Margem por unidade que absorva folha contratada.** Com 18,4% não absorve. É a trava principal.
+2. **Receita descolada das horas trabalhadas.** Se faturamento é função de horas, o teto é o corpo
+   do sócio.
+3. **Ativo transferível** — marca, contrato, carteira recorrente, ponto. Algo que valha dinheiro
+   sem o dono dentro.
+4. **Capex baixo** — menos capital exigindo retorno, e menos depreciação. Hoje é exatamente a
+   depreciação que leva o resultado da DRE a −R$ 659 (§4.2).
+
+⚠️ **O que esta seção NÃO responde:** qual negócio concreto tem esse perfil **em Cuparaque**.
+Isso depende de concorrência, acesso a fornecedor e composição real da renda local — nenhum dos
+três existe no projeto. Ver item (6) do `docs/BACKLOG.md`.
+
+---
+
 ⚠️ **Sobre a regra "reservar 3 a 6 meses de custo fixo" como colchão de caixa.** Ela circulou numa
 sessão de 31/07 e daria R$ 9,3 mil–R$ 18,5 mil. **Não use.** Dois problemas:
 

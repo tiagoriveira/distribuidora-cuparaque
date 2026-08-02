@@ -100,6 +100,20 @@ de três empregos de R$ 3.500/mês, financiada pelos próprios empregados.**
 - Não existe linha de lucro-alvo sobre o capital investido. Adicioná-la aumenta o faturamento
   necessário, que já está na borda do que a cidade comporta.
 
+**[31/07/2026] A aritmética que responde à pergunta — em `docs/modelo/resultados.md` §6:**
+os R$ 13.591/mês se dividem em **77,3% trabalho · 22,7% estrutura · 0% capital**. E o achado que
+muda a prioridade da discussão: **o capital não é o obstáculo, o trabalho é.** Adicionar a linha de
+retorno ao capital custa só +72 pedidos/mês; já a folha custa +99 pedidos/mês **por cada R$ 1.000**,
+e são 810 horas/mês a substituir.
+
+⚠️ **Consequência para esta decisão:** "reduzir a retirada" e "adicionar lucro-alvo" mexem na
+parcela errada. A trava é a **margem de contribuição de 18,4%, que não absorve folha** — enquanto
+ela não mudar, qualquer arranjo continua sendo emprego, porque nenhum dos sócios pode ser
+substituído sem quebrar a conta.
+
+**O critério objetivo, para não decidir isso por sensação:** *se você contratasse alguém para fazer
+tudo que você faz, ainda sobraria lucro?* Se não, é emprego — independente de CNPJ, ponto e estoque.
+
 **Opções na mesa:**
 - **Aceitar como emprego** — decisão perfeitamente válida, se R$ 3.500 for um bom salário para o
   esforço e para a alternativa de cada sócio. Prós: modelo fecha como está. Contras: o capital

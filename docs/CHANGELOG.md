@@ -15,6 +15,47 @@
 
 ---
 
+## [31/07/2026] — A decomposição que responde "emprego ou negócio" (Claude)
+
+**Contexto:** o founder reenquadrou a pergunta, e o reenquadramento é o achado: *"não é qual
+produto eu ofereço, é qual **modelo** me permite ter um negócio e não comprar um emprego"*. A
+discussão estava aberta desde 30/07 em `docs/em-aberto.md`, mas só de forma qualitativa.
+
+**O que foi produzido** (`docs/modelo/resultados.md` §6, tudo `DERIVADO`):
+
+**1. A decomposição dos R$ 13.591/mês:** **77,3% pagam o trabalho** dos sócios · 22,7% pagam a
+estrutura · **0% pagam o capital**. É a definição financeira de emprego, dita em número.
+
+**2. O teste da substituição**, como critério objetivo: *se você contratasse alguém para fazer tudo
+que você faz, ainda sobraria lucro?* Se não, é emprego — independente de CNPJ, ponto e estoque.
+São **810 horas/mês** a substituir (3 sócios × 270h, a ~R$ 12,96/hora).
+
+**3. O achado que muda a prioridade — o capital não é o obstáculo, o trabalho é:**
+
+| Linha ausente no modelo | Pedidos/mês a mais |
+|---|---|
+| Retorno ao capital (R$ 72.500 a 12% a.a. = R$ 725/mês) | **+72** (2,4/dia) |
+| Folha contratada, por cada R$ 1.000 | **+99** (3,3/dia) |
+
+Adicionar o lucro-alvo leva a exigência de 1.347 para 1.418 pedidos/mês — agravamento modesto. Já
+a folha é proibitiva com MC de R$ 10,09. **Consequência registrada: a premissa "funcionário fixo =
+R$ 0" não é escolha operacional, é a única forma de a conta fechar.**
+
+⚠️ **Isso desloca as opções da decisão em aberto.** "Reduzir a retirada" e "adicionar lucro-alvo"
+mexem na parcela errada — a trava é a **margem de 18,4%, que não absorve folha**.
+
+**4. Os quatro critérios estruturais** de um modelo que é negócio: margem que absorva folha ·
+receita descolada das horas · ativo transferível · capex baixo. **Nenhum é sobre qual produto se
+vende** — que é exatamente o ponto do reenquadramento do founder.
+
+⚠️ **O que continua sem resposta, e não foi preenchido (R6):** qual negócio concreto tem esse
+perfil **em Cuparaque**. Depende de concorrência, acesso a fornecedor e composição real da renda —
+nenhum dos três existe. Destrava com o item (6) do `docs/BACKLOG.md`.
+
+⚠️ Nenhuma cotação foi feita. `COTADO` segue em zero.
+
+---
+
 ## [31/07/2026] — Segundo cérebro consolidado no repositório, como vault do Obsidian (Claude)
 
 **Decisão do founder:** o segundo cérebro do projeto é **este repositório, aberto como vault do
